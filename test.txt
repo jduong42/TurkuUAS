@@ -1,1 +1,2 @@
 Testing that git is working properly.
+Adding something.
