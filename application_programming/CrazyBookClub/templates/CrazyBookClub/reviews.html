@@ -4,14 +4,14 @@
 
     <p>Reviews</p>
 
-        <ul>
-            {% for review in reviwes %} 
-                <li>{{ review.text }}</li>
-            {% empty %}
-                <li>No reviews have been added yet.</li>
-            {% endfor %}
-        </ul>
+    <ul>
+        {% for review in reviwes %} 
+            <li>{{ review.my_review }}</li>
+        {% empty %}
+            <li>No reviews have been added yet.</li>
+        {% endfor %}
+    </ul>
 
-        <a href="{% url 'CrazyBookClub:new_review' %}">Add a new review</a>
-        
+    <a href="{% url 'CrazyBookClub:new_review' %}">Add a new review</a>
+
 {% endblock content %}

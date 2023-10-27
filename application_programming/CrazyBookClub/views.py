@@ -50,4 +50,4 @@ def new_review(request):
         
     # Display a blank or invalid form.
     context = {'form': form}
-    return render(request, 'CrazyBookClub/books.html')
+    return render(request, 'CrazyBookClub/books.html', context)

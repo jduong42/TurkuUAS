@@ -4,14 +4,14 @@
 
     <p>Books</p>
 
-        <ul>
-            {% for book in books %} 
-                <li>{{ book.text }}</li>
-            {% empty %}
-                <li>No books have been added yet.</li>
-            {% endfor %}
-        </ul>
+    <ul>
+        {% for book in books %} 
+            <li>{{ book.name }}</li>
+        {% empty %}
+            <li>No books have been added yet.</li>
+        {% endfor %}
+    </ul>
 
-        <a href="{% url 'CrazyBookClub:new:_book' %}">Add a new book</a>
-        
+    <a href="{% url 'CrazyBookClub:new_book' %}">Add a new book</a>
+
 {% endblock content %}
