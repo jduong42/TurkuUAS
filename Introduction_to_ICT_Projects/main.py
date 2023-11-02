@@ -10,6 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
+from random_list import *
+from search_element import *
+
+random_list = randomize_list()
+print(random_list)
+
 def user_interface():
     # A Simple user interface for choosing an action.
 
@@ -23,16 +29,26 @@ def user_interface():
 
     user_input = int(input("Please choose your option: "))
 
-    if user_input not in range(1,6):
+    if user_input not in range(1,7):
         print("Invalid input, please choose again.")
         user_interface()
-
-    print(user_input)
-    return(user_input)
+    else:
+        parsing_option(user_input)
 
 def parsing_option(user_input):
+    # Taking the return value of user_interface function and passing into parsing function
     
     if user_input == 1:
         exit()
+    #elif user_input == 2:
+    if user_input == 6:
+        print(random_list)
+      
 
-user_interface()
+def main():
+  # Randomizing a list in the start of the program.
+
+  user_interface()
+
+if __name__ == "__main__":
+    main()
