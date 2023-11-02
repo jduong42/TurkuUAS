@@ -12,9 +12,11 @@
 
 from random_list import *
 from search_element import *
+from add_element import *
+
+# Made a randomized list with 30 elements as soon as program starts.
 
 random_list = randomize_list()
-print(random_list)
 
 def user_interface():
     # A Simple user interface for choosing an action.
@@ -41,10 +43,14 @@ def parsing_option(user_input):
     if user_input == 1:
         exit()
     #elif user_input == 2:
+    #if user_input == 3:
+        # New random_list will be returned, when element has been added to the existing list, thus creating a updated list.
+        
+    #    random_list = add_element(random_list)
     if user_input == 6:
         print(random_list)
       
-
+      
 def main():
   # Randomizing a list in the start of the program.
 
