@@ -54,10 +54,29 @@ def parsing_option(user_input):
           add_element(random_list)
           print('\n')
           user_interface()
+      if user_input == 4:
+          # kommentti
+
+          remove_element(random_list)
+          print('\n')
+          user_interface()
       if user_input == 6:
         print(random_list)
         print('\n')
         user_interface()
+
+def remove_element(list):
+   # Asking the user, what element to delete based on the index
+
+    print("Here is the existing list in from of: index - value")
+    for (i, item) in enumerate(list):
+       print("index:", i, "value", item)
+
+    user_input = int(input("What index you want to remove from the list? Give a valid index number: \n"))
+    list.pop(user_input)
+
+    return(list)
+
 
 def add_element(new_list):
     # Asking the user, what datatype of the element will be
@@ -108,8 +127,6 @@ def compare_elements(compare_list):
     
       
 def main():
-  # Randomizing a list in the start of the program.
-
   user_interface()
 
 if __name__ == "__main__":
