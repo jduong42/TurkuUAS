@@ -1,0 +1,17 @@
+{% extends 'CrazyBookClub/base.html' %}
+
+{% block content %}
+
+    <p>Books</p>
+
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="{% url 'CrazyBookClub:book' book.id %}"> {{ book.book }}</a>
+        </li>
+        {% empty %}
+        <li> No books have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+    {% endblock content %}
