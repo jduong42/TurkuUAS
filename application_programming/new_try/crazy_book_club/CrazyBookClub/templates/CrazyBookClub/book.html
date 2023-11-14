@@ -5,8 +5,12 @@
     <p>Book: {{ book.book }}</p>
 
     <p>Reviews:</p>
+    <p>
+        <a href="{% url 'CrazyBookClub:new_review' book.id %}">Add new review</a>
+    </p>
+    
     <ul>
-        {% for review in reviews %}
+        {% for review in entries %}
             <li>
                 <p>{{ review.date_added|date:'d M, Y H:i' }}</p>
                 <p>{{ review.book|linebreaks }}</p>
@@ -14,6 +18,6 @@
         {% empty %}
             <li>There are no entries for this book yet.
             </li>
-        {& endfor %}
+        {% endfor %}
     </ul>
-{% endblock content %}
+{% endblock content %}  

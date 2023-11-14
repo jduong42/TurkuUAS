@@ -1,0 +1,14 @@
+{% extends "CrazyBookClub/base.html" %}
+
+{% block content %}
+
+    <p><a href="{% url 'CrazyBookClub:book' book.id %}">{{ book }}</a></p>
+
+    <p>Add a new review:</p>
+        <form action="{% url 'CrazyBookClub:new_review' book.id %}" method='post'>
+            {% csrf_token %}
+            {{ form.as_div }}
+            <button name='submit'>Add entry</button>
+        </form>
+
+{% endblock content %}
