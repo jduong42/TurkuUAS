@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .models import Book
+from .models import Book, Review
 from .forms import BookForm, ReviewForm
 
 # Create your views here.
@@ -57,3 +57,21 @@ def new_review(request, book_id):
     # Display a blank or invalid form.
     context = {'book': book, 'form': form}
     return render(request, 'CrazyBookClub/new_review.html', context)
+
+def edit_review(request, review_id):
+    # Edit an existing review.
+    review = Review.objects.get(id=review_id)
+    book = review.book
+
+    if request.method != 'POST':
+        # Initial request; pre-fill form with the currrent review.
+        form = ReviewForm(instance=review)
+    else:
+        # POST data submitted, process data.
+        form = ReviewForm(instance=review, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('CrazyBookClub:book', book_id=book.id)
+    
+    context = {'review': review, 'book': book, 'form': form}
+    return render(request, 'CrazyBookClub/edit_review.html', context)

@@ -8,12 +8,15 @@
     <p>
         <a href="{% url 'CrazyBookClub:new_review' book.id %}">Add new review</a>
     </p>
-    
+
     <ul>
         {% for review in entries %}
             <li>
                 <p>{{ review.date_added|date:'d M, Y H:i' }}</p>
                 <p>{{ review.book|linebreaks }}</p>
+                <p>
+                    <a href="{% url 'CrazyBookClub:edit_review' review.id %}">
+                        Edit review</a></p>
             </li>
         {% empty %}
             <li>There are no entries for this book yet.

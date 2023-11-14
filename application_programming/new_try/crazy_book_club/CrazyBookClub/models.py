@@ -18,7 +18,7 @@ class Review(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     my_review = models.TextField(max_length=5000)
     stars = models.IntegerField
-    unfinished = models.BooleanField()
+    #unfinished = models.BooleanField()
 
     date_added = models.DateTimeField(auto_now_add=True)
     date_modified = models.DateTimeField(auto_now_add=True)

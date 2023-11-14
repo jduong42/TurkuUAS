@@ -16,4 +16,6 @@ urlpatterns = [
     path('new_book/', views.new_book, name='new_book'),
     # Page for adding new review.
     path('new_review/<int:book_id>/', views.new_review, name='new_review'),
+    # Page for editing a review.
+    path('edit_review/<int:review_id>/', views.edit_review, name="edit_review"),
 ]
