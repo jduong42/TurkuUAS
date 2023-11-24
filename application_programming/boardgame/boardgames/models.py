@@ -11,9 +11,25 @@ class Game(models.Model):
 
         return self.name
 
+class AddGame(models.Model):
+    # Add a game to the platform
+
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    text = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'games'
+
+    def __str__(self):
+        # Returns a string representating the addition of the game.
+
+        return f"{self.text[:50]}..."
+
 class User(models.Model):
 
     name = models.CharField(max_length=200)
+
 
     def __str__(self):
         # Returns a string presentation of the model.
