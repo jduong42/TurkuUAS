@@ -2,9 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-# A game class
-
 class Game(models.Model):
+
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -13,6 +12,7 @@ class Game(models.Model):
         return self.name
 
 class User(models.Model):
+
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -21,7 +21,8 @@ class User(models.Model):
         return self.name
 
 class Loan(models.Model):
+
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
     borrower = models.ForeignKey(User, on_delete=models.CASCADE)
     borrowed_date = models.DateField(auto_now_add=True)
-    return_date = models.DateTimeField(null=True, black=True)
+    return_date = models.DateTimeField(null=True, blank=True)
