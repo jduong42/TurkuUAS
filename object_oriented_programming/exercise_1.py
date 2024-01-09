@@ -1,5 +1,8 @@
 import random
 
+def print_hello():
+    print("Hello")
+
 def print_list():
 
     number_list = []
@@ -83,12 +86,60 @@ def arithmetic_progression():
     print("The sum of the terms is", sum_of_terms, "\n")
     print("The sum of the squared terms is", sum_of_squared_terms, "\n")
 
+def rps():
+
+    print("****** Welcome to Rock-Paper-Scissors game ******\n" + "The first who wins 3 rounds wins the whole game!\n")
+
+    p_win = 0
+    c_win = 0
+
+    while p_win < 3 and c_win < 3:
+
+        user_input = str(input("Choose one of following: Rock, Paper, Scissors.\n"))
+        computer_input = random.randint(0,100)
+
+        if computer_input < 33 and computer_input >= 0:
+            computer_chose = "rock"
+        if computer_input < 66 and computer_input >= 33:
+            computer_chose = "paper"
+        if (computer_input) < 100 and computer_input >= 66:
+            computer_chose = "scissors"
+        
+        if user_input.lower() == computer_chose:
+            print("It's a tie! Play again!\n")
+        if user_input.lower() == "rock" and computer_chose == "paper":
+            c_win += 1
+            print("Computer wins! You lost! :( \n")
+        if user_input.lower() == "rock" and computer_chose == "scissors":
+            p_win += 1
+            print("You win! Computer lost! :) \n")
+        if user_input.lower() == "paper" and computer_chose == "scissors":
+            c_win += 1
+            print("Computer wins! You lost! :( \n")
+        if user_input.lower() == "paper" and computer_chose == "rock":
+            p_win += 1
+            print("You win! Computer lost! :)\n")
+        if user_input.lower() == "scissors" and computer_chose == "rock":
+            c_win += 1
+            print("Computer wins! You lost! :( \n")
+        if user_input.lower() == "scissors" and computer_chose == "paper":
+            p_win += 1
+            print("You win! Computer lost! :)\n")
+        print("You have", p_win, "points and computer has", c_win, "points.\n")
+    
+    if p_win == 3:
+        print("Congratulations! You won the game!\n")
+    else:
+        print("Unfortunately computer won! Try again! \n")
+
 
 def main():
+    #print_hello()
     #lists = print_list()
     #order_list(lists)
     #read_integers()
-    arithmetic_progression()
+    #arithmetic_progression()
+    rps()
 
 if __name__ == "__main__":
     main()
