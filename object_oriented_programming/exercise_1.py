@@ -52,17 +52,22 @@ def read_integers():
         new_list.append(user_input)
     
     negative_list = []
+    pos_list_div_3 = []
     i = 0
     count = 0
 
     while i < len(new_list):
         if int(new_list[i]) < 0:
             negative_list.append(int(new_list[i]))
+        if int(new_list[i]) % 3 == 0 and int(new_list[i]) > 0:
+            pos_list_div_3.append(int(new_list[i]))
         if int(new_list[i]) % 2 == 0 and int(new_list[i]) != 0:
             count += 1
         i += 1
     
+    
     print(negative_list)
+    print(sum(pos_list_div_3))
     print(count)
 
 
