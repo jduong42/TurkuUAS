@@ -70,11 +70,25 @@ def read_integers():
     print(sum(pos_list_div_3))
     print(count)
 
+def arithmetic_progression():
+
+    ap_max = int(input("Give a valid integer value to describe the limit of Arithmetic Progression.\n"))
+    
+    number_of_terms = int(((ap_max - 3) / 3 + 1))
+    sum_of_terms = number_of_terms / 2 * (2 * 3 + (number_of_terms - 1) * 3)
+    sum_of_squared_terms = number_of_terms / 6 * (2 * 3 + (number_of_terms - 1) * 3) * (3 + (109 - 1) * 3 + 3)
+
+
+    print("The number of terms that appear in the Arithmetic Progression is", number_of_terms, "\n")
+    print("The sum of the terms is", sum_of_terms, "\n")
+    print("The sum of the squared terms is", sum_of_squared_terms, "\n")
+
 
 def main():
     #lists = print_list()
     #order_list(lists)
-    read_integers()
+    #read_integers()
+    arithmetic_progression()
 
 if __name__ == "__main__":
     main()
