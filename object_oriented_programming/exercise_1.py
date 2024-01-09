@@ -31,6 +31,7 @@ def print_list():
     return(number_list, str_list)
 
 def order_list(lists):
+
     first_list, second_list = lists
 
     first_list.sort()
@@ -39,9 +40,35 @@ def order_list(lists):
     print(first_list)
     print(second_list)
 
+    return 
+
+def read_integers(int_list):
+    
+    new_list = []
+    user_input = 1
+
+    while user_input != '0':
+        user_input = input("Write an integer number. If you want to quit adding numbers, press 0.\n")
+        new_list.append(user_input)
+    
+    negative_list = []
+    i = 0
+    count = 0
+
+    while i < len(new_list):
+        if int(new_list[i]) < 0:
+            negative_list.append(int(new_list[i]))
+        if int(new_list[i] % 0 == 2):
+            count += 1
+        i += 1
+    
+    print("Here is the list of negative numbers" + negative_list)
+
+
 def main():
     lists = print_list()
-    order_list(lists)
+    int_list = order_list(lists)
+    read_integers(int_list)
 
 if __name__ == "__main__":
     main()
