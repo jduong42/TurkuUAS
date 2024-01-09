@@ -42,7 +42,7 @@ def order_list(lists):
 
     return 
 
-def read_integers(int_list):
+def read_integers():
     
     new_list = []
     user_input = 1
@@ -58,17 +58,18 @@ def read_integers(int_list):
     while i < len(new_list):
         if int(new_list[i]) < 0:
             negative_list.append(int(new_list[i]))
-        if int(new_list[i] % 0 == 2):
+        if int(new_list[i]) % 2 == 0 and int(new_list[i]) != 0:
             count += 1
         i += 1
     
-    print("Here is the list of negative numbers" + negative_list)
+    print(negative_list)
+    print(count)
 
 
 def main():
-    lists = print_list()
-    int_list = order_list(lists)
-    read_integers(int_list)
+    #lists = print_list()
+    #order_list(lists)
+    read_integers()
 
 if __name__ == "__main__":
     main()
