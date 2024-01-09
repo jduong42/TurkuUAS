@@ -132,6 +132,11 @@ def rps():
     else:
         print("Unfortunately computer won! Try again! \n")
 
+def return_a_number():
+
+    number = random.randint(1, 6)
+    
+    return (number)
 
 def main():
     #print_hello()
@@ -139,7 +144,9 @@ def main():
     #order_list(lists)
     #read_integers()
     #arithmetic_progression()
-    rps()
+    #rps()
+    print(return_a_number())
+
 
 if __name__ == "__main__":
     main()
