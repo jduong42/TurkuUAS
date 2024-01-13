@@ -50,9 +50,12 @@ def read_integers():
     new_list = []
     user_input = 1
 
-    while user_input != '0':
-        user_input = input("Write an integer number. If you want to quit adding numbers, press 0.\n")
+    while True:
+        user_input = input("Write an integer number. If you want to quit adding numbers, write quit.\n")
         new_list.append(user_input)
+        if user_input == "quit":
+            new_list.remove("quit")
+            break
     
     negative_list = []
     pos_list_div_3 = []
@@ -69,22 +72,26 @@ def read_integers():
         i += 1
     
     
-    print(negative_list)
-    print(sum(pos_list_div_3))
-    print(count)
+    print("Number of negative integers is:", len(negative_list))
+    print("Sum of positive integers divisible by three is:", sum(pos_list_div_3))
+    print("Number of even integers is:", count)
 
 def arithmetic_progression():
 
     ap_max = int(input("Give a valid integer value to describe the limit of Arithmetic Progression.\n"))
     
-    number_of_terms = int(((ap_max - 3) / 3 + 1))
-    sum_of_terms = number_of_terms / 2 * (2 * 3 + (number_of_terms - 1) * 3)
-    sum_of_squared_terms = number_of_terms / 6 * (2 * 3 + (number_of_terms - 1) * 3) * (3 + (109 - 1) * 3 + 3)
-
-
-    print("The number of terms that appear in the Arithmetic Progression is", number_of_terms, "\n")
-    print("The sum of the terms is", sum_of_terms, "\n")
-    print("The sum of the squared terms is", sum_of_squared_terms, "\n")
+    if ap_max < 0:
+        print("The number of terms that appear in the Arithmetic Progression is", 0, "\n")
+        print("The sum of the terms is", 0, "\n")
+        print("The sum of the squared terms is", 0, "\n")
+    else:
+        number_of_terms = int(((ap_max - 3) / 3 + 1))
+        sum_of_terms = number_of_terms / 2 * (2 * 3 + (number_of_terms - 1) * 3)
+        sum_of_squared_terms = number_of_terms / 6 * (2 * 3 + (number_of_terms - 1) * 3) * (3 + (109 - 1) * 3 + 3)
+       
+        print("The number of terms that appear in the Arithmetic Progression is", number_of_terms, "\n")
+        print("The sum of the terms is", sum_of_terms, "\n")
+        print("The sum of the squared terms is", sum_of_squared_terms, "\n")
 
 def rps():
 
@@ -139,13 +146,13 @@ def return_a_number():
     return (number)
 
 def main():
-    print_hello()
-    lists = print_list()
-    order_list(lists)
-    read_integers()
-    arithmetic_progression()
-    rps()
-    print(return_a_number())
+    #print_hello()
+    #lists = print_list()
+    #order_list(lists)
+    #read_integers()
+    #arithmetic_progression()
+    #rps()
+    print("Random number is:", return_a_number())
 
 
 if __name__ == "__main__":
