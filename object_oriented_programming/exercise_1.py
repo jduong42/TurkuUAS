@@ -139,12 +139,12 @@ def return_a_number():
     return (number)
 
 def main():
-    #print_hello()
-    #lists = print_list()
-    #order_list(lists)
-    #read_integers()
-    #arithmetic_progression()
-    #rps()
+    print_hello()
+    lists = print_list()
+    order_list(lists)
+    read_integers()
+    arithmetic_progression()
+    rps()
     print(return_a_number())
 
 
