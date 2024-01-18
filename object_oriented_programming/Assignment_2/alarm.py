@@ -13,7 +13,6 @@ class Alarm_clock:
         self.minute = minute
         self.second = second
 
-
     def get_alarm(self):
         return self.hour, self.minute, self.second
 
@@ -30,10 +29,7 @@ def check_time(my_alarm, formated_time):
 def main():
     current_time = now.strftime("%H:%M:%S")
     formated_time = current_time.split(":")
-    print(f"Current time is {current_time}")
-    print(f"Formated time is {formated_time}")
     my_alarm = Alarm_clock("15", "42", "50")
-    print(my_alarm)
     check_time(my_alarm, formated_time)
     
 
