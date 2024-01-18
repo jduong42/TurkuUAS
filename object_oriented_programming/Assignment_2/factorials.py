@@ -13,4 +13,3 @@ def main():
     print(factorials(5))
 
 __init__ = main()
-
