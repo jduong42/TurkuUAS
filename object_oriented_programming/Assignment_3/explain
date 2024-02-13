@@ -1,0 +1,11 @@
+Encapsulation =     Describes the idea of wrapping data and the methods that work on data within one unit. 
+                    This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data.
+
+Client =            
+
+Data attributes =   After defining a class in Python, You will have to decide how your objects will be initialized.
+                    The object properties are called data attributes of the objects.
+
+Instance =          When creating a class in Python. You most likely assign data attributes or methods that the class or object has.
+                    Instances are individual objects created from the class. Each instances has their own set of attributes (from the defined class) and
+                    methods (from the defined class).
