@@ -7,8 +7,24 @@ function isLeapYear(year) {
     }
 }
 
-console.log(isLeapYear(2020));
-console.log(isLeapYear(2021));
-console.log(isLeapYear(2024));
-console.log(isLeapYear(2100));
-console.log(isLeapYear(2004));
+// This part is from ChatGPT.
+
+function displayResult(year, isLeap) {
+    var resultDiv = document.getElementById('result');
+    if (isLeap) {
+        resultDiv.textContent = "Year " + year + " is a leap year";
+    } else {
+        resultDiv.textContent = "Year " + year + " is not a leap year";
+    }
+}
+
+function checkYear() {
+    var yearInput = document.getElementById('yearInput').value;
+    var year = parseInt(yearInput);
+    if (!isNaN(year)) {
+        var isLeap = isLeapYear(year);
+        displayResult(year, isLeap);
+    } else {
+        alert("Please enter a valid year!");
+    }
+}
