@@ -12,9 +12,9 @@ class MagicPotion:
         for ingredient in self._ingredients:
             print(f"{ingredient[0]} {ingredient[1]} grams")
 
-class SecretMagicPotion():
+class SecretMagicPotion(MagicPotion):
     def __init__(self, name, password: str):
-        super().__init__()
+        super().__init__(name)
         self.password = password
 
     def add_ingredient(self, ingredient: str, amount: float, password: str):
