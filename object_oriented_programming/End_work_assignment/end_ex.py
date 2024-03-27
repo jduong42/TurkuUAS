@@ -60,6 +60,10 @@ class User:
         # A method is added for setting the phone for the user.
         self.phone.append(phone)
 
+    def remove_phone(self, phone: Phone):
+        # A method is added for removing the phone from the user.
+        self.phone.remove(phone)
+
     def get_phone(self):
         # A method is added for checking what phones the user has or have.
         return self.phone
@@ -71,6 +75,27 @@ class User:
         else:
             phones = ', '.join(str(phone) for phone in self.phone)
             return f"{self.first_name} {self.last_name} ({self.age}) is using {phones}."
+        
+class phoneTrade:
+    def __init__(self, user: User):
+        self.user = user
+        self.list_available_phones = []
+    
+    def user_trade_phone(self, user: User, phone: Phone):
+        # A method is added for trading the phone.
+        self.user = user
+        if phone in user.phone:
+            print(f"{user.first_name} {user.last_name} is trading {phone.brand}.")
+            user.phone.remove(phone)
+            self.list_available_phones.append(user.phone)
+            self.user.remove_phone(user.phone)
+        else:
+            raise ValueError("User does not have this phone.")
+        
+    def __str__(self):
+        # A method is added for printing the trade information.
+        return f"Available phones for trade: {self.list_available_phones}."
+    
 
     
 phone_1 = smartPhone("Samsung", 123456789, 128, 4, 6.5, "Galaxy S20", 2020, "Android", True)
@@ -84,3 +109,8 @@ phone_2 = smartPhone("Apple", 987654321, 256, 6, 6.1, "iPhone 11", 2019, "iOS", 
 print(phone_2)
 user_1.set_phone(phone_2)
 print(user_1)
+user_1.remove_phone(phone_1)
+print(user_1)
+phoneTrade_1 = phoneTrade(user_1)
+phoneTrade_1.user_trade_phone(user_1, phone_2)
+print(phoneTrade_1)
