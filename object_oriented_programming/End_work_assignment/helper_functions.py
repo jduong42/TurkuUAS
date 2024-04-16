@@ -1,4 +1,4 @@
-from phone_class import Phone, smartPhone
+from phone_class import Phone, SmartPhone
 
 def ft_regular():
     brand = input("Enter phone's brand: ")
@@ -14,7 +14,7 @@ def ft_smart():
     os = input("Enter phone's operating system: ")
     sd_card_slot = bool(input("Does the phone have an SD card slot? "))
     sim_card = bool(input("Does the phone have a SIM card slot? "))
-    phone = smartPhone(brand, model, year_of_publish, os, sd_card_slot, sim_card)
+    phone = SmartPhone(brand, model, year_of_publish, os, sd_card_slot, sim_card)
     return phone
 
 def phone_to_user(user_list, phone_list):
@@ -71,3 +71,10 @@ def remove_phone_from_user(user_list):
     user.remove_phone(phone_to_remove)
     print(f"{phone_to_remove.brand} {phone_to_remove.model} was removed from {user.first_name} {user.last_name}.")
     return phone_to_remove
+
+def print_phone_details(phone): # This function is polymorphic, it can be used for both Phone and SmartPhone objects
+    print(phone)  # This will call the __str__ method of the Phone or SmartPhone object
+
+    # Check if the phone is a SmartPhone 
+    if isinstance(phone, SmartPhone):
+        print(f"OS: {phone.os}")

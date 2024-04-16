@@ -8,7 +8,7 @@ class Phone:
     def __str__(self):
         return f"{self.brand} {self.model} ({self.year_of_publish})"
     
-class smartPhone(Phone):    
+class SmartPhone(Phone):    
     # Child class for smartphones
     def __init__(self, brand: str, model: str, year_of_publish: int, os: str, sd_card_slot: bool, sim_card: bool = True):
         super().__init__(brand, model, year_of_publish)
@@ -43,4 +43,4 @@ class smartPhone(Phone):
             raise ValueError("No SIM card slot available!")
         
     def __str__(self):
-        return f"{self.brand} {self.model} ({self.year_of_publish}) - {self.os}"
+        return f"{self.brand} {self.model} ({self.year_of_publish})"

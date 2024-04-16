@@ -1,12 +1,12 @@
 from user_class import User
-from helper_functions import ft_regular, ft_smart, phone_to_user, remove_phone_from_user
+from helper_functions import ft_regular, ft_smart, phone_to_user, remove_phone_from_user, print_phone_details
 
 # Global variables
 user_list = []
 phone_list = []
 
 def interface():
-    print("Welcome to the phone trade program!")
+    print("Welcome to the phone asigning program.")
 
     while True:
         print("Choose following options:")
@@ -50,7 +50,8 @@ def interface():
             if len(phone_list) == 0:
                 print("No phones.")
             for phone in phone_list:
-                print(phone)
+                #print(phone)
+                print_phone_details(phone)
         
         elif user_input == 5:
             phone = phone_to_user(user_list, phone_list)

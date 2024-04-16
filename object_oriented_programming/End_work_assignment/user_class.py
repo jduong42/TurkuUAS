@@ -26,5 +26,5 @@ class User:
             return f"{self.first_name} {self.last_name} ({self.age}) has no phone."
         else:
             phone_str = ', '.join(str(phone) for phone in self.phone)
-            return f'User({self.first_name}, {self.last_name}, {self.age}, {phone_str})'
+            return f'{self.first_name}, {self.last_name}, {self.age}, has phone(s): {phone_str}'
         
