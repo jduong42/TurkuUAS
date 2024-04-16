@@ -1,12 +1,7 @@
 class Phone:    
     # Parent class for phones
-    def __init__(self, brand: str, imei: int, storage_size: int, memory_size: int, screen_size: float,
-                 model: str, year_of_publish: int):
+    def __init__(self, brand: str, model: str, year_of_publish: int):
         self.brand = brand
-        self.imei = imei
-        self.storage_size = storage_size
-        self.memory_size = memory_size
-        self.screen_size = screen_size
         self.model = model
         self.year_of_publish = year_of_publish
 
@@ -15,9 +10,8 @@ class Phone:
     
 class smartPhone(Phone):    
     # Child class for smartphones
-    def __init__(self, brand: str, imei: int, storage_size: int, memory_size: int, screen_size: float,
-                 model: str, year_of_publish: int, os: str, sd_card_slot: bool, sim_card: bool = True):
-        super().__init__(brand, imei, storage_size, memory_size, screen_size, model, year_of_publish)
+    def __init__(self, brand: str, model: str, year_of_publish: int, os: str, sd_card_slot: bool, sim_card: bool = True):
+        super().__init__(brand, model, year_of_publish)
         self.os = os
         self.sd_card_slot = sd_card_slot
         self.sim_card = sim_card

@@ -1,5 +1,5 @@
 from user_class import User
-from helper_functions import ft_regular, ft_smart, phone_to_user
+from helper_functions import ft_regular, ft_smart, phone_to_user, remove_phone_from_user
 
 # Global variables
 user_list = []
@@ -15,8 +15,9 @@ def interface():
         print("3. See users.")
         print("4. See phones.")
         print("5. Set phone for user.")
+        print("6. Remove phone from user.")
         print("0. Exit.")
-        user_input = int(input("Choose option: "))
+        user_input = int(input("Choose option: \n"))
 
         if user_input == 1:
             first_name = input("Enter user's first name: ")
@@ -56,6 +57,11 @@ def interface():
             if phone != None:
                 user, phone = phone
                 phone_list.remove(phone)
+        
+        elif user_input == 6:
+            phone = remove_phone_from_user(user_list)
+            if phone != None:
+                phone_list.append(phone)
 
         elif user_input == 0:
             print("Exiting the program.")
