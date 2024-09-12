@@ -1,0 +1,16 @@
+{
+  "name": "recipe_connection",
+  "version": "1.0.0",
+  "description": "This app will enable users to share their recipies with other users",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "recipe",
+    "cook",
+    "user"
+  ],
+  "author": "Duong",
+  "license": "ISC"
+}
