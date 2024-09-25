@@ -1,0 +1,14 @@
+{
+  "name": "remote_25_09",
+  "version": "1.0.0",
+  "description": "evulator_program",
+  "main": "test_evaluator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "evulator"
+  ],
+  "author": "juha_duong",
+  "license": "ISC"
+}
